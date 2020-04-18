@@ -67,22 +67,19 @@ animations = [ {
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 19.1862
-height = 23.8012
+height = 54.2134
 
 [node name="Farmer" type="KinematicBody2D"]
 script = ExtResource( 15 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Animations" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "WalkUp"
-frame = 6
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -3.23535, 37.8535 )
+position = Vector2( -3.88239, 23.2944 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
