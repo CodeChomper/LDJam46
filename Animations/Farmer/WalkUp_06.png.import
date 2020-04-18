@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tiles.png-825b95a5145508fffe81ba0fc1c92c0b.stex"
+path="res://.import/WalkUp_06.png-da75bad1ddd955890bb5a7f27b80cc95.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tiles.png"
-dest_files=[ "res://.import/Tiles.png-825b95a5145508fffe81ba0fc1c92c0b.stex" ]
+source_file="res://Animations/Farmer/WalkUp_06.png"
+dest_files=[ "res://.import/WalkUp_06.png-da75bad1ddd955890bb5a7f27b80cc95.stex" ]
 
 [params]
 
