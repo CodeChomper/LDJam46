@@ -19,6 +19,10 @@ config/name="Ld Jam 46"
 run/main_scene="res://Scenes/Farm.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Globals="*res://Scripts/Globals.gd"
+
 [importer_defaults]
 
 texture={

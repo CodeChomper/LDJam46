@@ -7,12 +7,16 @@ var randy = null
 const HOP_CHANCE = 3
 
 var motion = Vector2(0,0)
+var egg = null
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	egg = preload("res://Scenes/Egg.tscn")
 	randy = RandomNumberGenerator.new()
 	randy.randomize()
+	$EggTimer.wait_time = randy.randi_range(60,120)
+	$EggTimer.start()
 	anim = $Animations
 	pass # Replace with function body.
 
@@ -42,22 +46,27 @@ func _on_animation_finished():
 
 	
 func _on_FarmerDetectionArea_area_entered(area):
-	print(area.name)
-	print("Farmer POSx: " + str(area.position.x))
-	print("Chicken POSx: " + str(position.x))
 	if area.name == 'FarmerArea2D':
 		var farmer = owner.find_node("Farmer")
 		if  farmer.position.x >= position.x:
 			anim.set_flip_h(false)
-			print("Go Left")
 			motion.x = -300
 		if farmer.position.x < position.x:
 			anim.set_flip_h(true)
-			print("Go Right")
 			motion.x = 300
 		if farmer.position.y >= position.y:
 			motion.y = -300
 		if farmer.position.y < position.y:
 			motion.y = 300
 	motion = move_and_slide(motion)
+	pass # Replace with function body.
+
+
+func _on_EggTimer_timeout():
+	var e = egg.instance()
+	get_parent().add_child(e)
+	var pos = anim.global_position
+	pos.y -= 50
+	e.set_position(pos)
+	
 	pass # Replace with function body.

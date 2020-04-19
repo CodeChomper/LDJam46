@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=110 format=2]
 
 [ext_resource path="res://Animations/Farmer/WalkUp_05.png" type="Texture" id=1]
 [ext_resource path="res://Animations/Farmer/WalkUp_08.png" type="Texture" id=2]
@@ -51,13 +51,66 @@
 [ext_resource path="res://Animations/Farmer/PickUpDown_06.png" type="Texture" id=49]
 [ext_resource path="res://Animations/Farmer/PickUpDown_07.png" type="Texture" id=50]
 [ext_resource path="res://Animations/Farmer/PickUpDown_08.png" type="Texture" id=51]
+[ext_resource path="res://Animations/Farmer/IdleBucket_01.png" type="Texture" id=52]
+[ext_resource path="res://Animations/Farmer/IdleBucket_02.png" type="Texture" id=53]
+[ext_resource path="res://Animations/Farmer/IdleBucket_00.png" type="Texture" id=54]
+[ext_resource path="res://Animations/Farmer/IdleBucket_03.png" type="Texture" id=55]
+[ext_resource path="res://Animations/Farmer/IdleBucket_04.png" type="Texture" id=56]
+[ext_resource path="res://Animations/Farmer/IdleBucket_08.png" type="Texture" id=57]
+[ext_resource path="res://Animations/Farmer/IdleBucketUp_01.png" type="Texture" id=58]
+[ext_resource path="res://Animations/Farmer/WalkBucket_03.png" type="Texture" id=59]
+[ext_resource path="res://Animations/Farmer/IdleBucket_07.png" type="Texture" id=60]
+[ext_resource path="res://Animations/Farmer/IdleBucketUp_02.png" type="Texture" id=61]
+[ext_resource path="res://Animations/Farmer/WalkBucket_04.png" type="Texture" id=62]
+[ext_resource path="res://Animations/Farmer/WalkBucket_05.png" type="Texture" id=63]
+[ext_resource path="res://Animations/Farmer/WalkBucket_00.png" type="Texture" id=64]
+[ext_resource path="res://Animations/Farmer/WalkBucket_06.png" type="Texture" id=65]
+[ext_resource path="res://Animations/Farmer/WalkBucket_08.png" type="Texture" id=66]
+[ext_resource path="res://Animations/Farmer/WalkBucket_07.png" type="Texture" id=67]
+[ext_resource path="res://Animations/Farmer/IdleBucket_06.png" type="Texture" id=68]
+[ext_resource path="res://Animations/Farmer/IdleBucketUp_06.png" type="Texture" id=69]
+[ext_resource path="res://Animations/Farmer/WalkBucket_09.png" type="Texture" id=70]
+[ext_resource path="res://Animations/Farmer/IdleBucketUp_05.png" type="Texture" id=71]
+[ext_resource path="res://Animations/Farmer/IdleBucketUp_04.png" type="Texture" id=72]
+[ext_resource path="res://Animations/Farmer/WalkBucket_01.png" type="Texture" id=73]
+[ext_resource path="res://Animations/Farmer/IdleBucketUp_09.png" type="Texture" id=74]
+[ext_resource path="res://Animations/Farmer/WalkBucket_02.png" type="Texture" id=75]
+[ext_resource path="res://Animations/Farmer/IdleBucketUp_00.png" type="Texture" id=76]
+[ext_resource path="res://Animations/Farmer/IdleBucket_09.png" type="Texture" id=77]
+[ext_resource path="res://Animations/Farmer/IdleBucketUp_07.png" type="Texture" id=78]
+[ext_resource path="res://Animations/Farmer/IdleBucket_05.png" type="Texture" id=79]
+[ext_resource path="res://Animations/Farmer/IdleBucketUp_03.png" type="Texture" id=80]
+[ext_resource path="res://Animations/Farmer/IdleBucketUp_08.png" type="Texture" id=81]
+[ext_resource path="res://Animations/Farmer/WalkBucketUp_09.png" type="Texture" id=82]
+[ext_resource path="res://Animations/Farmer/WalkBucketUp_00.png" type="Texture" id=83]
+[ext_resource path="res://Animations/Farmer/WalkBucketUp_01.png" type="Texture" id=84]
+[ext_resource path="res://Animations/Farmer/WalkBucketUp_03.png" type="Texture" id=85]
+[ext_resource path="res://Animations/Farmer/WalkBucketUp_06.png" type="Texture" id=86]
+[ext_resource path="res://Animations/Farmer/WalkBucketUp_07.png" type="Texture" id=87]
+[ext_resource path="res://Animations/Farmer/WalkBucketUp_02.png" type="Texture" id=88]
+[ext_resource path="res://Animations/Farmer/WalkBucketUp_08.png" type="Texture" id=89]
+[ext_resource path="res://Animations/Farmer/WalkBucketUp_05.png" type="Texture" id=90]
+[ext_resource path="res://Animations/Farmer/WalkBucketUp_04.png" type="Texture" id=91]
+[ext_resource path="res://Animations/Farmer/PickUpUp_02.png" type="Texture" id=92]
+[ext_resource path="res://Animations/Farmer/PickUpUp_00.png" type="Texture" id=93]
+[ext_resource path="res://Animations/Farmer/PickUpUp_01.png" type="Texture" id=94]
+[ext_resource path="res://Animations/Farmer/PickUpUp_03.png" type="Texture" id=95]
+[ext_resource path="res://Animations/Farmer/PickUpUp_04.png" type="Texture" id=96]
+[ext_resource path="res://Animations/Farmer/PickUpUp_09.png" type="Texture" id=97]
+[ext_resource path="res://Animations/Farmer/PickUpUp_06.png" type="Texture" id=98]
+[ext_resource path="res://Animations/Farmer/PickUpUp_08.png" type="Texture" id=99]
+[ext_resource path="res://Animations/Farmer/PickUpUp_07.png" type="Texture" id=100]
+[ext_resource path="res://Animations/Farmer/PickUpUp_05.png" type="Texture" id=101]
+[ext_resource path="res://Scripts/UIController.gd" type="Script" id=102]
+[ext_resource path="res://COOPBL.TTF" type="DynamicFontData" id=103]
+[ext_resource path="res://UI/OrderPaper.png" type="Texture" id=104]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 1 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "WalkUp",
-"speed": 15.0
+"speed": 40.0
 }, {
 "frames": [ ExtResource( 47 ), ExtResource( 44 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 42 ) ],
 "loop": false,
@@ -69,6 +122,31 @@ animations = [ {
 "name": "IdleUp",
 "speed": 15.0
 }, {
+"frames": [ ExtResource( 76 ), ExtResource( 58 ), ExtResource( 61 ), ExtResource( 80 ), ExtResource( 72 ), ExtResource( 71 ), ExtResource( 69 ), ExtResource( 78 ), ExtResource( 81 ), ExtResource( 74 ) ],
+"loop": true,
+"name": "IdleBucketUp",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 54 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 79 ), ExtResource( 68 ), ExtResource( 60 ), ExtResource( 57 ), ExtResource( 77 ) ],
+"loop": true,
+"name": "IdleBucket",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 64 ), ExtResource( 73 ), ExtResource( 75 ), ExtResource( 59 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 65 ), ExtResource( 67 ), ExtResource( 66 ), ExtResource( 70 ) ],
+"loop": true,
+"name": "WalkBucket",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 83 ), ExtResource( 84 ), ExtResource( 88 ), ExtResource( 85 ), ExtResource( 91 ), ExtResource( 90 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 89 ), ExtResource( 82 ) ],
+"loop": true,
+"name": "WalkBucketUp",
+"speed": 40.0
+}, {
+"frames": [ ExtResource( 93 ), ExtResource( 94 ), ExtResource( 92 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 101 ), ExtResource( 98 ), ExtResource( 100 ), ExtResource( 99 ), ExtResource( 97 ) ],
+"loop": false,
+"name": "PickUpUp",
+"speed": 15.0
+}, {
 "frames": [ ExtResource( 30 ), ExtResource( 11 ), ExtResource( 40 ), ExtResource( 13 ), ExtResource( 34 ), ExtResource( 29 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 26 ), ExtResource( 28 ) ],
 "loop": true,
 "name": "Idle",
@@ -77,12 +155,20 @@ animations = [ {
 "frames": [ ExtResource( 27 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 33 ), ExtResource( 31 ), ExtResource( 37 ), ExtResource( 39 ), ExtResource( 41 ), ExtResource( 32 ), ExtResource( 38 ) ],
 "loop": true,
 "name": "Walk",
-"speed": 15.0
+"speed": 30.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 19.1862
 height = 54.2134
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+font_data = ExtResource( 103 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 24
+font_data = ExtResource( 103 )
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 41.3924
@@ -92,7 +178,7 @@ script = ExtResource( 15 )
 
 [node name="Animations" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "PickUp"
+animation = "PickUpUp"
 frame = 9
 playing = true
 
@@ -102,10 +188,53 @@ shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = true
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
 editor_draw_drag_margin = true
+
+[node name="Node2D" type="Node2D" parent="Camera2D"]
+z_index = 4096
+script = ExtResource( 102 )
+
+[node name="EggCountLabel" type="Label" parent="Camera2D/Node2D"]
+margin_left = -498.053
+margin_top = -288.767
+margin_right = -266.053
+margin_bottom = -253.767
+custom_fonts/font = SubResource( 4 )
+text = "Eggs in Hand: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OrderPaper" type="Sprite" parent="Camera2D/Node2D"]
+position = Vector2( 402.323, -174.242 )
+texture = ExtResource( 104 )
+
+[node name="Label" type="Label" parent="Camera2D/Node2D/OrderPaper"]
+margin_left = -88.4451
+margin_top = -108.3
+margin_right = -14.4451
+margin_bottom = -79.3002
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Order"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EggsNeededLabel" type="Label" parent="Camera2D/Node2D/OrderPaper"]
+margin_left = -84.8352
+margin_top = -74.9076
+margin_right = -44.8352
+margin_bottom = -60.9076
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Eggs Needed 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="FarmerArea2D" type="Area2D" parent="."]
 collision_layer = 2
@@ -115,3 +244,5 @@ collision_mask = 2
 position = Vector2( -0.970642, 32.0299 )
 shape = SubResource( 3 )
 [connection signal="animation_finished" from="Animations" to="." method="_on_animation_finished"]
+[connection signal="area_entered" from="FarmerArea2D" to="." method="_on_FarmerArea2D_area_entered"]
+[connection signal="area_exited" from="FarmerArea2D" to="." method="_on_FarmerArea2D_area_exited"]
