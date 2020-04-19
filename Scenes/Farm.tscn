@@ -296,6 +296,13 @@ texture = ExtResource( 3 )
 position = Vector2( -0.669189, 33.0682 )
 polygon = PoolVector2Array( -255.842, 93.5006, -64.2624, 174.553, 255.212, 28.2373, 255.738, -30.1838, -254.542, -13.2864 )
 
+[node name="StaticBody2D2" type="StaticBody2D" parent="YSort/Barn"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Barn/StaticBody2D2"]
+polygon = PoolVector2Array( -256.258, 140.858, -64.1137, 236.686, 256.777, 77.216, 256.289, 37.7142, -256.014, 92.0901 )
+
 [node name="Chicken" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -142.308, 375.265 )
 
@@ -318,37 +325,40 @@ position = Vector2( 65.7308, 477.933 )
 position = Vector2( -13.1619, 515.758 )
 
 [node name="Chicken8" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 23.5827, 448.754 )
+position = Vector2( 312.287, 172.729 )
 
 [node name="Chicken9" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 46.8182, 519.541 )
 
 [node name="Back" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( -320.08, 440.404 )
+position = Vector2( -447.08, 502.404 )
 
 [node name="Back2" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( -192.482, 506.222 )
+position = Vector2( -319.482, 568.222 )
 
 [node name="Back6" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( -64.1982, 317.505 )
-
-[node name="Back5" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 63.3995, 383.323 )
+position = Vector2( -64.1981, 314.092 )
 
 [node name="Side" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( -319.621, 378.912 )
+position = Vector2( -447.392, 439.527 )
 
 [node name="Side3" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 62.1311, 569.325 )
+position = Vector2( 63.1065, 568.35 )
+
+[node name="Side6" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( -64.6646, 630.285 )
 
 [node name="Side4" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 189.116, 509.345 )
+position = Vector2( 193.017, 503.981 )
 
 [node name="Side2" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( -192.022, 317.332 )
+position = Vector2( -319.793, 377.947 )
+
+[node name="Side5" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( -192.509, 315.524 )
 
 [node name="Back3" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( -64.9206, 568.428 )
+position = Vector2( -191.921, 630.428 )
 
 [node name="Back4" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 190.961, 445.529 )
+position = Vector2( 191.449, 440.165 )

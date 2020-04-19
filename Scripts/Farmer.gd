@@ -10,6 +10,7 @@ var anim
 var motion = Vector2(0,0)
 var fliped = false
 var up = false
+var interacting = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	anim = $Animations
@@ -42,7 +43,12 @@ func _process(delta):
 		anim.play("Walk")
 		motion.x = -SPEED
 		motion.y = (SPEED/2)
+	elif(Input.is_action_pressed("Interact")):
+		anim.play("PickUp")
+		interacting = true
 	else:
+		if interacting:
+			return
 		if(up):
 			anim.play("IdleUp")
 		else:
@@ -53,3 +59,9 @@ func _process(delta):
 	anim.set_flip_h(fliped)
 		
 	pass
+
+
+func _on_animation_finished():
+	if $Animations.animation == "PickUp":
+		interacting = false
+	pass # Replace with function body.

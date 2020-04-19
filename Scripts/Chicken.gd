@@ -38,3 +38,26 @@ func _process(delta):
 func _on_animation_finished():
 	state = "Idle"
 	pass # Replace with function body.
+
+
+	
+func _on_FarmerDetectionArea_area_entered(area):
+	print(area.name)
+	print("Farmer POSx: " + str(area.position.x))
+	print("Chicken POSx: " + str(position.x))
+	if area.name == 'FarmerArea2D':
+		var farmer = owner.find_node("Farmer")
+		if  farmer.position.x >= position.x:
+			anim.set_flip_h(false)
+			print("Go Left")
+			motion.x = -300
+		if farmer.position.x < position.x:
+			anim.set_flip_h(true)
+			print("Go Right")
+			motion.x = 300
+		if farmer.position.y >= position.y:
+			motion.y = -300
+		if farmer.position.y < position.y:
+			motion.y = 300
+	motion = move_and_slide(motion)
+	pass # Replace with function body.
