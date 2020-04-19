@@ -12,7 +12,7 @@ func _ready():
 	new_order()
 
 func new_order():
-	eggs_needed = randy.randi_range(0, 24)
+	eggs_needed = 1 #randy.randi_range(0, 24)
 	emit_signal("new_order_sig")
 
 func deposit_goods():

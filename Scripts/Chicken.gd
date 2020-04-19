@@ -15,7 +15,7 @@ func _ready():
 	egg = preload("res://Scenes/Egg.tscn")
 	randy = RandomNumberGenerator.new()
 	randy.randomize()
-	$EggTimer.wait_time = randy.randi_range(60,120)
+	$EggTimer.wait_time = randy.randi_range(5,60)#,120)
 	$EggTimer.start()
 	anim = $Animations
 	pass # Replace with function body.
