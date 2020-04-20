@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Animations/Cow/IdleDown_02.png" type="Texture" id=1]
 [ext_resource path="res://Animations/Cow/IdleDown_03.png" type="Texture" id=2]
@@ -65,6 +65,12 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="CircleShape2D" id=2]
+radius = 44.8733
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 39.0629
+
 [node name="Cow" type="KinematicBody2D"]
 collision_layer = 5
 collision_mask = 5
@@ -76,9 +82,17 @@ animation = "WalkUp"
 frame = 9
 playing = true
 
+[node name="MilkingArea" type="Area2D" parent="Animations"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animations/MilkingArea"]
+rotation = 1.21824
+shape = SubResource( 2 )
+
 [node name="WalkTimer" type="Timer" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -51.3287, -9.25434, -32.1888, -16.4665, -9.9976, -25.343, 17.1866, -42.8185, 34.6622, -58.3524, 47.9769, -53.6367, 67.3942, -36.9933, 65.4525, -28.1169, 43.8161, -0.377861, 38.2682, 27.0837, -21.3706, 61.2027, -27.7506, 62.8671, -50.2191, 50.1071, -56.3217, 6.55689 )
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 3 )
 [connection signal="animation_finished" from="Animations" to="." method="_on_animation_finished"]
 [connection signal="timeout" from="WalkTimer" to="." method="_on_WalkTimer_timeout"]

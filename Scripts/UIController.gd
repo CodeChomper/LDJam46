@@ -15,4 +15,7 @@ func _ready():
 func _process(delta):
 	$EggCountLabel.text = 'Eggs in Hand: ' + str(Globals.eggs_in_hand)
 	$OrderPaper/EggsNeededLabel.text = 'Eggs Needed: ' + str(Globals.eggs_needed)
+	
+	$MilkCountLabel.text = "Milk in Bucket: " + str(Globals.milk_in_bucket)
+	$OrderPaper/MilkNeededLabel.text = 'Milk Needed: ' + str(Globals.milk_needed)
 	pass
