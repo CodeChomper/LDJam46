@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=2]
+[gd_scene load_steps=125 format=2]
 
 [ext_resource path="res://Animations/Farmer/FarmerDown-Idle_07.png" type="Texture" id=1]
 [ext_resource path="res://Animations/Farmer/FarmerDown-IdleBucket_03.png" type="Texture" id=2]
@@ -101,9 +101,6 @@
 [ext_resource path="res://Animations/Farmer/FarmerUp-WalkBucket_09.png" type="Texture" id=99]
 [ext_resource path="res://Animations/Farmer/FarmerDown-WalkBucket_07.png" type="Texture" id=100]
 [ext_resource path="res://Animations/Farmer/FarmerUp-Walk_00.png" type="Texture" id=101]
-[ext_resource path="res://Scripts/UIController.gd" type="Script" id=102]
-[ext_resource path="res://COOPBL.TTF" type="DynamicFontData" id=103]
-[ext_resource path="res://UI/OrderPaper.png" type="Texture" id=104]
 [ext_resource path="res://Animations/Farmer/FarmerDown-Milk_02.png" type="Texture" id=105]
 [ext_resource path="res://Animations/Farmer/FarmerDown-Milk_01.png" type="Texture" id=106]
 [ext_resource path="res://Animations/Farmer/FarmerDown-Milk_03.png" type="Texture" id=107]
@@ -192,14 +189,6 @@ animations = [ {
 radius = 19.1862
 height = 28.9768
 
-[sub_resource type="DynamicFont" id=3]
-size = 30
-font_data = ExtResource( 103 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 24
-font_data = ExtResource( 103 )
-
 [sub_resource type="CircleShape2D" id=5]
 radius = 49.6899
 
@@ -215,78 +204,6 @@ playing = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -3.88239, 23.2944 )
 shape = SubResource( 2 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-drag_margin_left = 0.0
-drag_margin_top = 0.0
-drag_margin_right = 0.0
-drag_margin_bottom = 0.0
-editor_draw_drag_margin = true
-
-[node name="Node2D" type="Node2D" parent="Camera2D"]
-z_index = 4096
-script = ExtResource( 102 )
-
-[node name="EggCountLabel" type="Label" parent="Camera2D/Node2D"]
-margin_left = -498.053
-margin_top = -288.767
-margin_right = -266.053
-margin_bottom = -253.767
-custom_fonts/font = SubResource( 3 )
-text = "Eggs in Hand: 0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MilkCountLabel" type="Label" parent="Camera2D/Node2D"]
-margin_left = -498.053
-margin_top = -242.522
-margin_right = -266.053
-margin_bottom = -207.522
-custom_fonts/font = SubResource( 3 )
-text = "Milk in Bucket: 0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="OrderPaper" type="Sprite" parent="Camera2D/Node2D"]
-position = Vector2( 402.323, -174.242 )
-texture = ExtResource( 104 )
-
-[node name="Label" type="Label" parent="Camera2D/Node2D/OrderPaper"]
-margin_left = -88.4451
-margin_top = -108.3
-margin_right = -14.4451
-margin_bottom = -79.3002
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Order"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="EggsNeededLabel" type="Label" parent="Camera2D/Node2D/OrderPaper"]
-margin_left = -84.8352
-margin_top = -74.9076
-margin_right = -44.8352
-margin_bottom = -60.9076
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Eggs Needed 0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MilkNeededLabel" type="Label" parent="Camera2D/Node2D/OrderPaper"]
-margin_left = -84.8352
-margin_top = -45.1533
-margin_right = 9.16479
-margin_bottom = -31.1533
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Milk Needed 0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="FarmerArea2D" type="Area2D" parent="."]
 collision_layer = 2
