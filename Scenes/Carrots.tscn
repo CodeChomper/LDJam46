@@ -1,0 +1,32 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scripts/Carrots.gd" type="Script" id=1]
+[ext_resource path="res://Props/Crop2.png" type="Texture" id=2]
+[ext_resource path="res://Props/Crop1.png" type="Texture" id=3]
+[ext_resource path="res://Props/Crop4.png" type="Texture" id=4]
+[ext_resource path="res://Props/Crop6.png" type="Texture" id=5]
+[ext_resource path="res://Props/Crop3.png" type="Texture" id=6]
+[ext_resource path="res://Props/Crop5.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "Grow",
+"speed": 5.0
+} ]
+
+[node name="Carrots" type="AnimatedSprite"]
+frames = SubResource( 1 )
+animation = "Grow"
+script = ExtResource( 1 )
+
+[node name="CarrotArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CarrotArea"]
+polygon = PoolVector2Array( -64, 0, 0, -32, 64, 0, 0, 32 )
+
+[node name="GrowTimer" type="Timer" parent="."]
+[connection signal="timeout" from="GrowTimer" to="." method="_on_GrowTimer_timeout"]

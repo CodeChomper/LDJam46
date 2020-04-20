@@ -129,16 +129,6 @@ animations = [ {
 "name": "WalkUp",
 "speed": 40.0
 }, {
-"frames": [ ExtResource( 47 ), ExtResource( 34 ), ExtResource( 50 ), ExtResource( 38 ), ExtResource( 52 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 41 ), ExtResource( 54 ), ExtResource( 40 ) ],
-"loop": false,
-"name": "PickUp",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 6 ), ExtResource( 32 ), ExtResource( 9 ), ExtResource( 33 ), ExtResource( 11 ), ExtResource( 46 ), ExtResource( 39 ) ],
-"loop": true,
-"name": "IdleUp",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 23 ), ExtResource( 26 ), ExtResource( 5 ), ExtResource( 17 ), ExtResource( 24 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 25 ), ExtResource( 3 ), ExtResource( 28 ) ],
 "loop": true,
 "name": "IdleBucketUp",
@@ -158,6 +148,11 @@ animations = [ {
 "loop": true,
 "name": "WalkBucketUp",
 "speed": 40.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 6 ), ExtResource( 32 ), ExtResource( 9 ), ExtResource( 33 ), ExtResource( 11 ), ExtResource( 46 ), ExtResource( 39 ) ],
+"loop": true,
+"name": "IdleUp",
+"speed": 15.0
 }, {
 "frames": [ ExtResource( 36 ), ExtResource( 53 ), ExtResource( 35 ), ExtResource( 42 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 43 ), ExtResource( 57 ), ExtResource( 37 ), ExtResource( 61 ) ],
 "loop": false,
@@ -183,14 +178,19 @@ animations = [ {
 "loop": true,
 "name": "Walk",
 "speed": 30.0
+}, {
+"frames": [ ExtResource( 47 ), ExtResource( 34 ), ExtResource( 50 ), ExtResource( 38 ), ExtResource( 52 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 41 ), ExtResource( 54 ), ExtResource( 40 ) ],
+"loop": false,
+"name": "PickUp",
+"speed": 15.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 19.1862
 height = 28.9768
 
-[sub_resource type="CircleShape2D" id=5]
-radius = 49.6899
+[sub_resource type="CircleShape2D" id=3]
+radius = 28.9535
 
 [node name="Farmer" type="KinematicBody2D"]
 script = ExtResource( 15 )
@@ -206,12 +206,13 @@ position = Vector2( -3.88239, 23.2944 )
 shape = SubResource( 2 )
 
 [node name="FarmerArea2D" type="Area2D" parent="."]
+position = Vector2( 0, 37.9572 )
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FarmerArea2D"]
 position = Vector2( -0.970642, 32.0299 )
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 [connection signal="animation_finished" from="Animations" to="." method="_on_animation_finished"]
 [connection signal="area_entered" from="FarmerArea2D" to="." method="_on_FarmerArea2D_area_entered"]
 [connection signal="area_exited" from="FarmerArea2D" to="." method="_on_FarmerArea2D_area_exited"]

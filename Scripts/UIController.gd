@@ -1,4 +1,4 @@
-extends VBoxContainer
+extends HBoxContainer
 
 
 # Declare member variables here. Examples:
@@ -13,9 +13,18 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$EggCountLabel.text = 'Eggs in Hand: ' + str(Globals.eggs_in_hand)
-	$OrderPaper/EggsNeededLabel.text = 'Eggs Needed: ' + str(Globals.eggs_needed)
+	$MarginContainer/OrderPaper/VBoxContainer/OrderNumberLabel.text = "Order #" + str(Globals.level)
 	
-	$MilkCountLabel.text = "Milk in Bucket: " + str(Globals.milk_in_bucket)
-	$OrderPaper/MilkNeededLabel.text = 'Milk Needed: ' + str(Globals.milk_needed)
+	$LeftColumn/EggsLabel.text = 'Eggs in Hand: ' + str(Globals.eggs_in_hand)
+	$MarginContainer/OrderPaper/VBoxContainer/EggsNeededLabel.text = 'Eggs Needed: ' + str(Globals.eggs_needed - Globals.eggs_in_truck)
+	
+	$LeftColumn/MilkLabel.text = "Milk in Bucket: " + str(Globals.milk_in_bucket)
+	$MarginContainer/OrderPaper/VBoxContainer/MilkNeededLabel.text = 'Milk Needed: ' + str(Globals.milk_needed - Globals.milk_in_truck)
+	
+	$LeftColumn/CarrotLabel.text = "Carrots in Hand: " + str(Globals.carrots_in_hand)
+	$MarginContainer/OrderPaper/VBoxContainer/CarrotsNeededLabel.text = 'Carrots Needed: ' + str(Globals.carrots_needed - Globals.carrots_in_truck)
+	
+	$MarginContainer/OrderPaper/TimeLeftLabel.text = "Time Left: " + str(round(Globals.order_timer.time_left))
+	
+	$LeftColumn/CarrotLabel.text = "Carrots in Hand: " + str(Globals.carrots_in_hand)
 	pass

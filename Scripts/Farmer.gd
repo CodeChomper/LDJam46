@@ -16,7 +16,9 @@ var holding_bucket = false
 var near_egg = false
 var near_truck = false
 var near_cow = false
+var near_carrot = false
 var egg = null
+var carrot = null
 
 var bucket
 # Called when the node enters the scene tree for the first time.
@@ -76,20 +78,33 @@ func _process(delta):
 		motion.y = (SPEED/2)
 	elif(Input.is_action_just_pressed("Interact")):
 		interacting = true
-		if near_truck and holding_bucket:
-			Globals.deposit_milk()
-		if near_truck and Globals.eggs_in_hand > 0:
-			Globals.deposit_eggs()
+		if near_truck:
+			Globals.deposit_goods()
+#		if near_truck and holding_bucket:
+#			Globals.deposit_milk()
+#		if near_truck and Globals.eggs_in_hand > 0:
+#			Globals.deposit_eggs()
 		# add carrots here
 			return
 		if up and not holding_bucket:
 			anim.play("PickUpUp")
 		if not up and not holding_bucket:
 			anim.play("PickUp")
-		if near_egg and not holding_bucket:
-			egg.queue_free()
-			Globals.eggs_in_hand += 1
 		
+		# Pick up code
+		var areas = $FarmerArea2D.get_overlapping_areas()
+		if(len(areas) > 0):
+			for area in areas:
+				if area.name == 'EggArea' and Globals.eggs_in_hand < 6:
+					area.get_parent().queue_free()
+					Globals.eggs_in_hand += 1
+					Globals.carrots_in_hand = 0
+				if area.name == 'CarrotArea' and Globals.carrots_in_hand < 12:
+					var carrot = area.get_parent()
+					if carrot.frame == 5:
+						carrot.frame = 0
+						Globals.carrots_in_hand += 2
+						Globals.eggs_in_hand = 0
 		# Bucket Code
 		if near_bucket:
 			Globals.eggs_in_hand = 0
@@ -156,6 +171,9 @@ func _on_FarmerArea2D_area_entered(area):
 		near_truck = true
 	if area.name == 'MilkingArea':
 		near_cow = true
+	if area.name == 'CarrotArea':
+		near_carrot = true
+		carrot = area.get_parent()
 
 
 func _on_FarmerArea2D_area_exited(area):
@@ -169,3 +187,5 @@ func _on_FarmerArea2D_area_exited(area):
 	if area.name == 'MilkingArea':
 		interacting = false
 		near_cow = false
+	if area.name == 'CarrotArea':
+		near_carrot = false

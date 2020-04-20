@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://COOPBL.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://UI/OrderPaper.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/UIController.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -27,6 +28,7 @@ margin_right = -20.0
 margin_bottom = -20.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -50,6 +52,13 @@ margin_right = 788.0
 margin_bottom = 68.0
 custom_fonts/font = SubResource( 1 )
 text = "Milk in Bucket: 0	"
+
+[node name="CarrotLabel" type="Label" parent="LeftColumn"]
+margin_top = 78.0
+margin_right = 788.0
+margin_bottom = 107.0
+custom_fonts/font = SubResource( 1 )
+text = "Carrots in Hand: 0	"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 margin_left = 792.0
@@ -95,7 +104,7 @@ custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Eggs Needed: 10"
 
-[node name="MilkNeededLabel2" type="Label" parent="MarginContainer/OrderPaper/VBoxContainer"]
+[node name="MilkNeededLabel" type="Label" parent="MarginContainer/OrderPaper/VBoxContainer"]
 margin_top = 51.0
 margin_right = 182.0
 margin_bottom = 70.0
@@ -103,7 +112,15 @@ custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Milk Needed: 10"
 
-[node name="Label" type="Label" parent="MarginContainer/OrderPaper"]
+[node name="CarrotsNeededLabel" type="Label" parent="MarginContainer/OrderPaper/VBoxContainer"]
+margin_top = 74.0
+margin_right = 182.0
+margin_bottom = 93.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Carrots  Needed: 10"
+
+[node name="TimeLeftLabel" type="Label" parent="MarginContainer/OrderPaper"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
