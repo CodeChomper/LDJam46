@@ -160,7 +160,7 @@ animations = [ {
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 19.1862
-height = 54.2134
+height = 28.9768
 
 [sub_resource type="DynamicFont" id=4]
 size = 30
@@ -178,7 +178,7 @@ script = ExtResource( 15 )
 
 [node name="Animations" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "PickUpUp"
+animation = "WalkUp"
 frame = 9
 playing = true
 

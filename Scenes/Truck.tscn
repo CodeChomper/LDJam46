@@ -23,8 +23,6 @@ collision_mask = 2
 position = Vector2( -161.673, -74.1468 )
 shape = SubResource( 1 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -273.532, -74.6395, -125.278, -164.209, 292.302, 64.348, 81.6587, 208.277, -300.711, 18.0188 )
 [connection signal="area_entered" from="TruckArea" to="." method="_on_TruckArea_area_entered"]

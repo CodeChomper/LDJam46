@@ -1,0 +1,84 @@
+[gd_scene load_steps=43 format=2]
+
+[ext_resource path="res://Animations/Cow/IdleDown_02.png" type="Texture" id=1]
+[ext_resource path="res://Animations/Cow/IdleDown_03.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Cow.gd" type="Script" id=3]
+[ext_resource path="res://Animations/Cow/IdleDown_00.png" type="Texture" id=4]
+[ext_resource path="res://Animations/Cow/IdleDown_05.png" type="Texture" id=5]
+[ext_resource path="res://Animations/Cow/IdleDown_04.png" type="Texture" id=6]
+[ext_resource path="res://Animations/Cow/IdleDown_06.png" type="Texture" id=7]
+[ext_resource path="res://Animations/Cow/IdleDown_01.png" type="Texture" id=8]
+[ext_resource path="res://Animations/Cow/WalkDown_06.png" type="Texture" id=9]
+[ext_resource path="res://Animations/Cow/WalkDown_05.png" type="Texture" id=10]
+[ext_resource path="res://Animations/Cow/IdleUp_00.png" type="Texture" id=11]
+[ext_resource path="res://Animations/Cow/WalkDown_04.png" type="Texture" id=12]
+[ext_resource path="res://Animations/Cow/IdleDown_09.png" type="Texture" id=13]
+[ext_resource path="res://Animations/Cow/IdleUp_05.png" type="Texture" id=14]
+[ext_resource path="res://Animations/Cow/IdleUp_07.png" type="Texture" id=15]
+[ext_resource path="res://Animations/Cow/WalkDown_08.png" type="Texture" id=16]
+[ext_resource path="res://Animations/Cow/WalkDown_09.png" type="Texture" id=17]
+[ext_resource path="res://Animations/Cow/WalkDown_03.png" type="Texture" id=18]
+[ext_resource path="res://Animations/Cow/WalkUp_03.png" type="Texture" id=19]
+[ext_resource path="res://Animations/Cow/WalkUp_05.png" type="Texture" id=20]
+[ext_resource path="res://Animations/Cow/WalkUp_06.png" type="Texture" id=21]
+[ext_resource path="res://Animations/Cow/IdleUp_04.png" type="Texture" id=22]
+[ext_resource path="res://Animations/Cow/WalkUp_07.png" type="Texture" id=23]
+[ext_resource path="res://Animations/Cow/IdleDown_07.png" type="Texture" id=24]
+[ext_resource path="res://Animations/Cow/WalkUp_08.png" type="Texture" id=25]
+[ext_resource path="res://Animations/Cow/IdleUp_02.png" type="Texture" id=26]
+[ext_resource path="res://Animations/Cow/IdleUp_08.png" type="Texture" id=27]
+[ext_resource path="res://Animations/Cow/IdleUp_09.png" type="Texture" id=28]
+[ext_resource path="res://Animations/Cow/WalkUp_00.png" type="Texture" id=29]
+[ext_resource path="res://Animations/Cow/WalkUp_01.png" type="Texture" id=30]
+[ext_resource path="res://Animations/Cow/WalkDown_07.png" type="Texture" id=31]
+[ext_resource path="res://Animations/Cow/WalkDown_00.png" type="Texture" id=32]
+[ext_resource path="res://Animations/Cow/IdleUp_03.png" type="Texture" id=33]
+[ext_resource path="res://Animations/Cow/WalkDown_02.png" type="Texture" id=34]
+[ext_resource path="res://Animations/Cow/WalkUp_04.png" type="Texture" id=35]
+[ext_resource path="res://Animations/Cow/IdleUp_01.png" type="Texture" id=36]
+[ext_resource path="res://Animations/Cow/IdleDown_08.png" type="Texture" id=37]
+[ext_resource path="res://Animations/Cow/IdleUp_06.png" type="Texture" id=38]
+[ext_resource path="res://Animations/Cow/WalkDown_01.png" type="Texture" id=39]
+[ext_resource path="res://Animations/Cow/WalkUp_02.png" type="Texture" id=40]
+[ext_resource path="res://Animations/Cow/WalkUp_09.png" type="Texture" id=41]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 29 ), ExtResource( 30 ), ExtResource( 40 ), ExtResource( 19 ), ExtResource( 35 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 23 ), ExtResource( 25 ), ExtResource( 41 ) ],
+"loop": false,
+"name": "WalkUp",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 36 ), ExtResource( 26 ), ExtResource( 33 ), ExtResource( 22 ), ExtResource( 14 ), ExtResource( 38 ), ExtResource( 15 ), ExtResource( 27 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "IdleUp",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 39 ), ExtResource( 34 ), ExtResource( 18 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 31 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": false,
+"name": "WalkDown",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 8 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 24 ), ExtResource( 37 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "IdleDown",
+"speed": 5.0
+} ]
+
+[node name="Cow" type="KinematicBody2D"]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource( 3 )
+
+[node name="Animations" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "WalkUp"
+frame = 9
+playing = true
+
+[node name="WalkTimer" type="Timer" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -51.3287, -9.25434, -32.1888, -16.4665, -9.9976, -25.343, 17.1866, -42.8185, 34.6622, -58.3524, 47.9769, -53.6367, 67.3942, -36.9933, 65.4525, -28.1169, 43.8161, -0.377861, 38.2682, 27.0837, -21.3706, 61.2027, -27.7506, 62.8671, -50.2191, 50.1071, -56.3217, 6.55689 )
+[connection signal="animation_finished" from="Animations" to="." method="_on_animation_finished"]
+[connection signal="timeout" from="WalkTimer" to="." method="_on_WalkTimer_timeout"]
