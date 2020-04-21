@@ -12,7 +12,18 @@ var milk_needed
 var carrots_needed
 var order_timer
 var level
+var people_left = 100
 signal new_order_sig
+signal fail_order_sig
+
+func _process(delta):
+	if(Input.is_action_just_released("NewOrder")):
+		eggs_in_truck = 10000000
+		milk_in_truck = 1000000
+		carrots_in_truck = 1000000
+		check_if_order_is_complete()
+	if(Input.is_action_just_pressed("FailOrder")):
+		_on_order_timer_time_out()
 
 func _ready():
 	randy = RandomNumberGenerator.new()
@@ -36,15 +47,19 @@ func reset():
 	carrots_in_hand = 0
 	carrots_needed = 0
 	carrots_in_truck = 0
+	people_left = 100
 
 
 func new_order():
-	eggs_needed = randy.randi_range(1, level * 2)
-	milk_needed = 3	
-	carrots_needed = 10
+	eggs_needed = randy.randi_range(level, level * 2)
+	milk_needed = randy.randi_range(level, level * 2)
+	carrots_needed = randy.randi_range(level*4, level*10)
 	
 	# if level one give them way more time
-	order_timer.wait_time = 20 * (eggs_needed + milk_needed)
+	if level == 1:
+		order_timer.wait_time = 60*5
+	else:
+		order_timer.wait_time = 15 * (eggs_needed + milk_needed)
 	order_timer.start()
 	
 func deposit_goods():
@@ -83,4 +98,10 @@ func check_if_order_is_complete():
 		new_order()
 
 func _on_order_timer_time_out():
+	emit_signal("fail_order_sig")
+	people_left -= 25
+	if people_left <= 0:
+		get_tree().change_scene("res://Scenes/GameOver.tscn")
+		#fail game
+		pass
 	print("Order Failed!")

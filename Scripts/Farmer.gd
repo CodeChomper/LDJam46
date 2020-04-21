@@ -25,10 +25,15 @@ var bucket
 func _on_new_order():
 	print("Player sees the new order!!!!!!")
 	pass
+func _on_fail_order():
+	$FailOrder.play()
+	pass
+
 func _ready():
 	anim = $Animations
 	bucket = get_parent().find_node("Bucket")
 	Globals.connect("new_order_sig", self, "_on_new_order")
+	Globals.connect("fail_order_sig", self, "_on_fail_order")
 	pass # Replace with function body.
 
 
@@ -37,6 +42,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if(Input.is_action_pressed("ui_left")):
+		if not $Footsteeps.playing:
+			$Footsteeps.play()
 		interacting = false
 		fliped = true
 		up = true
@@ -47,6 +54,8 @@ func _process(delta):
 		motion.x = -SPEED
 		motion.y = (-SPEED/2)
 	elif(Input.is_action_pressed("ui_right")):
+		if not $Footsteeps.playing:
+			$Footsteeps.play()
 		interacting = false
 		fliped = true
 		up = false
@@ -57,6 +66,8 @@ func _process(delta):
 		motion.x = SPEED
 		motion.y = (SPEED/2)
 	elif(Input.is_action_pressed("ui_up")):
+		if not $Footsteeps.playing:
+			$Footsteeps.play()
 		interacting = false
 		fliped = false
 		up = true
@@ -67,6 +78,8 @@ func _process(delta):
 		motion.x = SPEED
 		motion.y = (-SPEED/2)
 	elif(Input.is_action_pressed("ui_down")):
+		if not $Footsteeps.playing:
+			$Footsteeps.play()
 		interacting = false
 		fliped = false
 		up = false
@@ -79,6 +92,7 @@ func _process(delta):
 	elif(Input.is_action_just_pressed("Interact")):
 		interacting = true
 		if near_truck:
+			$DeliverGoods.play()
 			Globals.deposit_goods()
 #		if near_truck and holding_bucket:
 #			Globals.deposit_milk()
@@ -112,6 +126,7 @@ func _process(delta):
 			bucket.visible = false
 			holding_bucket = true
 		elif holding_bucket and near_cow:
+			$MooPlayer.play()
 			if up:
 				anim.play('MilkUp')
 			else:
@@ -136,6 +151,7 @@ func _process(delta):
 		
 		
 	else:
+		$Footsteeps.stop()
 		if interacting:
 			return
 		if(up):

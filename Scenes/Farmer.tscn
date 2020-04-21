@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=2]
+[gd_scene load_steps=129 format=2]
 
 [ext_resource path="res://Animations/Farmer/FarmerDown-Idle_07.png" type="Texture" id=1]
 [ext_resource path="res://Animations/Farmer/FarmerDown-IdleBucket_03.png" type="Texture" id=2]
@@ -101,6 +101,9 @@
 [ext_resource path="res://Animations/Farmer/FarmerUp-WalkBucket_09.png" type="Texture" id=99]
 [ext_resource path="res://Animations/Farmer/FarmerDown-WalkBucket_07.png" type="Texture" id=100]
 [ext_resource path="res://Animations/Farmer/FarmerUp-Walk_00.png" type="Texture" id=101]
+[ext_resource path="res://Sound/mooo.wav" type="AudioStream" id=102]
+[ext_resource path="res://Sound/footsteps.wav" type="AudioStream" id=103]
+[ext_resource path="res://Sound/DropInTruck.wav" type="AudioStream" id=104]
 [ext_resource path="res://Animations/Farmer/FarmerDown-Milk_02.png" type="Texture" id=105]
 [ext_resource path="res://Animations/Farmer/FarmerDown-Milk_01.png" type="Texture" id=106]
 [ext_resource path="res://Animations/Farmer/FarmerDown-Milk_03.png" type="Texture" id=107]
@@ -121,6 +124,7 @@
 [ext_resource path="res://Animations/Farmer/FarmerDown-Milk_09.png" type="Texture" id=122]
 [ext_resource path="res://Animations/Farmer/FarmerUp-Milk_00.png" type="Texture" id=123]
 [ext_resource path="res://Animations/Farmer/FarmerDown-Milk_06.png" type="Texture" id=124]
+[ext_resource path="res://Sound/Fail.wav" type="AudioStream" id=125]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -213,6 +217,20 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FarmerArea2D"]
 position = Vector2( -0.970642, 32.0299 )
 shape = SubResource( 3 )
+
+[node name="MooPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 102 )
+
+[node name="Footsteeps" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 103 )
+pitch_scale = 1.07
+
+[node name="DeliverGoods" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 104 )
+pitch_scale = 0.77
+
+[node name="FailOrder" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 125 )
 [connection signal="animation_finished" from="Animations" to="." method="_on_animation_finished"]
 [connection signal="area_entered" from="FarmerArea2D" to="." method="_on_FarmerArea2D_area_entered"]
 [connection signal="area_exited" from="FarmerArea2D" to="." method="_on_FarmerArea2D_area_exited"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/chiken.wav-2bbe8b6ef22c50c709c0427938f7e437.sample"
+
+[deps]
+
+source_file="res://Sound/chiken.wav"
+dest_files=[ "res://.import/chiken.wav-2bbe8b6ef22c50c709c0427938f7e437.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

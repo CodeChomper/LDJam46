@@ -544,23 +544,23 @@ position = Vector2( 191.449, 440.165 )
 z_index = 1
 
 [node name="Cow" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 672.98, 351.819 )
+position = Vector2( 376, 704 )
 z_index = 1
 
 [node name="Cow2" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 615.933, 117.235 )
+position = Vector2( -32, -672 )
 z_index = 1
 
 [node name="Cow3" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 427.188, 214.712 )
+position = Vector2( 624, 264 )
 z_index = 1
 
 [node name="Cow4" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 818.392, -13.8763 )
+position = Vector2( -496, -248 )
 z_index = 1
 
 [node name="Cow5" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 731.787, 157.327 )
+position = Vector2( -1168, -144 )
 z_index = 1
 
 [node name="Chicken" parent="YSort" instance=ExtResource( 4 )]
@@ -591,6 +591,7 @@ position = Vector2( -316.17, 450.519 )
 position = Vector2( 46.8182, 519.541 )
 
 [node name="Bucket" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 264, 208 )
 z_index = 1
 
 [node name="TruckResetArea" type="Area2D" parent="."]

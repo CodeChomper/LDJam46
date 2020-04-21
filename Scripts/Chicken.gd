@@ -63,6 +63,7 @@ func _on_FarmerDetectionArea_area_entered(area):
 
 
 func _on_EggTimer_timeout():
+	$LayEgg.play()
 	var e = egg.instance()
 	get_parent().add_child(e)
 	var pos = anim.global_position

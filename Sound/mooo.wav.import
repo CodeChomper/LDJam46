@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mooo.wav-8f614b277c902ccdc97de9b7b18aba02.sample"
+
+[deps]
+
+source_file="res://Sound/mooo.wav"
+dest_files=[ "res://.import/mooo.wav-8f614b277c902ccdc97de9b7b18aba02.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

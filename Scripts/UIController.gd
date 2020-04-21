@@ -27,4 +27,6 @@ func _process(delta):
 	$MarginContainer/OrderPaper/TimeLeftLabel.text = "Time Left: " + str(round(Globals.order_timer.time_left))
 	
 	$LeftColumn/CarrotLabel.text = "Carrots in Hand: " + str(Globals.carrots_in_hand)
+	
+	$VBoxContainer/CenterContainer/PopulationLabel.text = "Population Left: " + str(Globals.people_left)
 	pass

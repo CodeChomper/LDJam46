@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Props/Truck.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Truck.gd" type="Script" id=2]
+[ext_resource path="res://Sound/TruckDriveAway.wav" type="AudioStream" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 161.922
@@ -25,4 +26,7 @@ shape = SubResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -273.532, -74.6395, -125.278, -164.209, 292.302, 64.348, 81.6587, 208.277, -300.711, 18.0188 )
+
+[node name="DriveAway" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
 [connection signal="area_entered" from="TruckArea" to="." method="_on_TruckArea_area_entered"]

@@ -13,12 +13,15 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_new_order_sig():
+	$DriveAway.play()
 	drive = true
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if drive:
+		if not $DriveAway.playing:
+			$DriveAway.play()
 		position += Vector2(SPEED, SPEED/2)
 	pass
 
@@ -30,4 +33,5 @@ func _on_TruckArea_area_entered(area):
 	
 	if area.name == "TruckStopArea" and can_stop:
 		drive = false
+		$DriveAway.stop()
 	pass # Replace with function body.
